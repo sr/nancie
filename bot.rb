@@ -75,6 +75,10 @@ on :channel, /^nancie.* follow (\S+)/ do
   end
 end
 
+on :channel, /^nancie.* what is the answer to life, the universe, and everything/ do
+  msg channel, "#{nick}, 42"
+end
+
 on :private, /^allow (\S+)/ do
   to_allow = match[1]
   if Nancie.allowed?(nick)
